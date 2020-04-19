@@ -4,7 +4,7 @@ from flask_jwt import JWT
 
 from security import authenticate, identity
 from resources.user import UserRegister
-from resources.command import Command, CommandList
+from resources.command import Command, CommandList, CommandListShort
 from resources.category import Category, CategoryList
 from resources.utils import Ping,Howto
 
@@ -25,8 +25,9 @@ jwt = JWT(app, authenticate, identity)  # /auth
 
 api.add_resource(Category, '/category/<string:name>')
 api.add_resource(CategoryList, '/categories')
-api.add_resource(Command, '/item/<string:name>')
+api.add_resource(Command, '/command/<string:name>')
 api.add_resource(CommandList, '/commands')
+api.add_resource(CommandListShort, '/commandz')
 api.add_resource(UserRegister, '/register')
 api.add_resource(Ping,'/ping')
 api.add_resource(Howto,'/howto')

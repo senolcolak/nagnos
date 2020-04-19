@@ -16,7 +16,7 @@ class Command(Resource):
                         help="Every item needs a category_id."
                         )
 
-    @jwt_required()
+    #@jwt_required()
     def get(self, name):
         command = CommandModel.find_by_name(name)
         if command:
@@ -62,4 +62,8 @@ class Command(Resource):
 
 class CommandList(Resource):
     def get(self):
-        return {'command': list(map(lambda x: x.json(), CommandModel.query.all()))}
+        return {'commands': list(map(lambda x: x.json(), CommandModel.query.all()))}
+
+class CommandListShort(Resource):
+    def get(self):
+        return {'commands': list(map(lambda x: x, CommandModel.query.with_entities(CommandModel.name)))}

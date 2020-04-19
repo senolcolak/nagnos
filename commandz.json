@@ -1,0 +1,46 @@
+{
+    "commands": [
+        [
+            "ls"
+        ],
+        [
+            "df"
+        ],
+        [
+            "tar"
+        ],
+        [
+            "chmod"
+        ],
+        [
+            "chown"
+        ],
+        [
+            "free"
+        ],
+        [
+            "kill"
+        ],
+        [
+            "ps"
+        ],
+        [
+            "cp"
+        ],
+        [
+            "netstat"
+        ],
+        [
+            "ifconfig"
+        ],
+        [
+            "ip"
+        ],
+        [
+            "find"
+        ],
+        [
+            "rsync"
+        ]
+    ]
+}
