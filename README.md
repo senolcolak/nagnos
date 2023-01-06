@@ -27,15 +27,16 @@ user is testing the internet connection
 $ ping google.com
 ```
 #### Screen2. (right) Suggestion screen
-suggestions and analyses, 
-meanwhile on the right panel
+suggestions and analyses,  
+meanwhile on the right panel  
+   
 :white_check_mark: df -h any disk < %80  
 :white_check_mark: df -i i node numbers < %80  
 :white_check_mark: ip route  
 ....  
 
 whenever the admin is writing a command the screen should show mostly used similar command completions
-like if the user says " # lvcreate .. " on the screen1, the suggestion screen should tell the rest of the command "# lvcreate ............"
+like if the user says " # lvcreate .. " on the screen1, the suggestion screen should tell the rest of the command "# lvcreate ............"   
 
 #### Screen3. (bottom 3 line) tail analyse screen
 this screen tails all the logs  and looks for errors. compares the results with the previous admins and creates interaction requests. Like please check that, than press enter and so on..
