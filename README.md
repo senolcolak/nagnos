@@ -29,17 +29,20 @@ $ ping google.com
 #### Screen2. (right) Suggestion screen
 suggestions and analyses, 
 meanwhile on the right panel
-:white_check_mark: df -h any disk < %80
-:white_check_mark: df -i i node numbers < %80
-:white_check_mark: ip route
-....
+:white_check_mark: df -h any disk < %80  
+:white_check_mark: df -i i node numbers < %80  
+:white_check_mark: ip route  
+....  
 
 whenever the admin is writing a command the screen should show mostly used similar command completions
 like if the user says " # lvcreate .. " on the screen1, the suggestion screen should tell the rest of the command "# lvcreate ............"
 
 #### Screen3. (bottom 3 line) tail analyse screen
 this screen tails all the logs  and looks for errors. compares the results with the previous admins and creates interaction requests. Like please check that, than press enter and so on..
-what kind of tuning can be done, like reeup disk space, increase kernel parameter, change mysql password, the number of inodes is too small, 
+````
+suggestion #1: increase the following kernel parameter for xxxx then press enter
+````
+what kind of tuning can be done, like reeup disk space, increase kernel parameter, change mysql password, the number of inodes is too small,  
 STATIC has only defined suggestions, like backup etc, change some paramters if it runs PHP, nginx and so on..
 
 
