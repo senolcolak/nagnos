@@ -1,52 +1,83 @@
-basicly this is a tmux session for the system administrators that will diagnose problems and offer solutions 
+# AI-Assisted Tmux Diagnostics Environment
+### Smart Troubleshooting for System Administrators, DevOps, and SRE Teams
 
-Purpose:
-Mainly when a admin enters to a host system, to understand the running system the engineer runs some commands to see the states of the processes.
-This screens will be doing that without any further configuration need.
+This project provides a next-generation **tmux-based diagnostic environment** that assists system administrators in understanding, analyzing, and troubleshooting host systems instantly — **without manual setup or configuration**.
 
-Features:
-1. Sessions are by default recorded. during the installation you need to ask where to record the sessions (Local or Remote)
-2. Suggestions to Engineers for the running commands,
-3. Analyse Online/Static for the running systems
-4. Kubernetes stack..
+It combines:
+- Real-time command suggestions  
+- Static and dynamic system analysis  
+- Automatic session recording  
+- A knowledgebase-driven remote diagnostics engine  
+- Optional multi-user collaboration  
 
+The goal: **give engineers instant situational awareness the moment they SSH into a server.**
 
+---
 
-optional (TODO):
-9. mutliple users can interact the same session, like tmate (later implemented)
-. 
+## 🧩 **Key Features**
 
+### 🔹 Automatic Tmux Workspace
+- Three-pane layout:
+  1. **Main terminal**
+  2. **Suggestion pane**
+  3. **Analysis pane**
+- Launches automatically when an admin logs in.
 
-Screen1. (left)
-Main Screen The administrator is running on this screen.
+### 🔹 Intelligent Command Suggestions
+- Detects incomplete or incorrect commands.
+- Displays most-used completions and safer alternatives.
+- Example: typing `lvcreate` instantly shows full recommended usage.
 
-Screen2. (right-1)
-Suggestion screen
-suggestions to make some changes, whenever the admin is writing a command the screen should show mostly used similar command completions
-like if the user says " # lvcreate .. " on the screen1, the suggestion screen should tell the rest of the command "# lvcreate ............"
+### 🔹 Static System Analysis (Offline)
+- OS, CPU, RAM, inode, disk usage
+- Running services, open ports
+- Misconfiguration detection
+- PHP, Nginx, MySQL, Kubernetes best-practice checks
+- Hypervisor information
+- Security observations
 
-Screen3. (right-2)
-analyse screen
-what kind of tuning can be done, like reeup disk space, increase kernel parameter, change mysql password, the number of inodes is too small, 
-STATIC has only defined suggestions, like backup etc, change some paramters if it runs PHP, nginx and so on..
+### 🔹 Dynamic Analysis (Online)
+- Queries a remote knowledgebase for tailored recommendations
+- Fills analysis templates and generates actionable routines
+- Works via:
+  - **Bash Runner (v1)**: Collects baseline runtime info
+  - **Go Agent (v2)**: Cross-compiled, secure, advanced collector
 
+### 🔹 Session Recording
+- Every tmux session is recorded by default
+- Choose **local or remote** storage during installation
+- Encrypted and access-controlled
 
+### 🔹 Future Features (Roadmap)
+- Remote-driven diagnostics (diagnostic packs pushed on demand)
+- Multi-user collaboration (tmate-style)
+- Plugin system for new service checks
+- Kubernetes cluster-wide intelligence
 
+---
 
+## 🚀 **Why Nagnos is the key for you to manage the systems better?**
 
-Static Analyse
-some best practice executions can be done by default. that can be done also via the CURL, but we need to get some information about the destination system. We will read the OS, total memory usage, installed applications, open ports, running services, error log, system log about errors, hypervisor data.. and request a static file for that analyse..
+Nagnos is the Senior System Administrator Assistant that will guide you not to make any mistakes and behave like you, when you are not there.
 
+System administrators spend a significant amount of time manually running the same commands every time they log into a server:
 
-Dynamic (online) Analyse
-first we will use a simple bash programm to take the parameters to run on the host systems, later we need to write a cross-compiled go program to get the values from the Knowledgebase.. the bash runner (1st)
+```bash
+top
+df -h
+journalctl -xe
+free -m
+netstat -tulpen
+ps aux
+systemctl status <service>
+```
 
-Online anaylse will send some queries to the destination api, and the results will create execution routines. Like we will have some static Templates that the queries will fill the required informations and run them to get the bash scripts to be executed locally..
+This tmux environment does that automatically and adds intelligence:
 
+- Suggests commands
+- Analyzes system health
+- Detects misconfigurations
+- Generates recommended fixes
+- Helps junior engineers act like senior engineers
+- Provides repeatable, standardized troubleshooting
 
-
-
-Remote driven push process will be created to run on the tmux session to analyse the problems...
---> later will be defined more..
-
-a bash script will remotely create XYZ.sh files for simple iterations..
